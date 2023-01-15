@@ -9,9 +9,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UsuarioService {
 
-  private usuarioSubject = new BehaviorSubject<Usuario>({})
+  private usuarioSubject = new BehaviorSubject<Usuario>({});
+
   constructor(private tokenService: TokenService) {
-    if(this.tokenService.possuiToken()){
+    if (this.tokenService.possuiToken()) {
       this.decodificaJWT();
     }
   }
@@ -31,12 +32,12 @@ export class UsuarioService {
     this.decodificaJWT();
   }
 
-  logout(){
+  logout() {
     this.tokenService.excluiToken();
     this.usuarioSubject.next({});
   }
 
-  estaLogado(){
+  estaLogado() {
     return this.tokenService.possuiToken();
   }
 }
