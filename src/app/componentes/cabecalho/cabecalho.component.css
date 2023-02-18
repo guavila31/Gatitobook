@@ -1,0 +1,10 @@
+.titulo-menu {
+  color: #141619;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.titulo-menu:hover{
+  color: #10305f;
+  text-decoration: underline;
+}
